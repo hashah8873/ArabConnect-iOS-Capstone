@@ -28,15 +28,78 @@ ArabConnect is a mobile application designed to support Arabic-speaking newcomer
 
 ---
 
+# 📱 Application Screens
+
+### Authentication
+
+* Splash Screen
+* Welcome Screen
+* Login Screen
+* Register Screen
+
+### Main Screens
+
+* Home Screen
+* Profile Screen
+
+### Community Resources
+
+* Jobs Screen
+* Housing Screen
+* Healthcare Screen
+* Education Screen
+
+---
+
+# ✅ Current Progress
+
+### Completed Features
+
+* Created SwiftUI project structure
+* Designed and implemented Splash Screen
+* Built Welcome Screen
+* Built Login Screen
+* Built Register Screen
+* Built Home Screen
+* Built Profile Screen
+* Created Jobs resource screen
+* Created Housing resource screen
+* Created Healthcare resource screen
+* Created Education resource screen
+* Implemented navigation between all screens
+* Connected Xcode project to GitHub
+* Created GitHub Project Board and task tracking
+
+---
+
+# 🔜 Upcoming Features
+
+* Firebase Authentication
+* User Registration and Login Validation
+* Firestore Database Integration
+* Government Programs Section
+* Newcomer Rights Information
+* Search Functionality
+* Dynamic User Profiles
+* Community Posts and Listings
+
+---
+
 # 🛠 Technologies and Tools
 
+### Currently Used
+
+* Swift
 * SwiftUI
-* Firebase Authentication
-* Firebase Firestore
-* Firebase Storage
 * Xcode
 * GitHub
 * Adobe XD
+
+### Planned Integration
+
+* Firebase Authentication
+* Firebase Firestore
+* Firebase Storage
 
 ---
 
@@ -49,21 +112,28 @@ ArabConnect is a mobile application designed to support Arabic-speaking newcomer
 ## Stage 2
 
 * GitHub Setup
-* Firebase Configuration
+* Project Planning
+* SwiftUI Project Creation
 
 ## Stage 3
 
 * UI Development
 * Authentication Screens
+* Navigation Structure
 
 ## Stage 4
 
 * Community Features
+* Government Programs
+* Resource Categories
 * Database Integration
 
 ## Stage 5
 
-* Testing and Final Improvements
+* Firebase Authentication
+* Testing and Bug Fixing
+* Final Improvements
+* Project Presentation
 
 ---
 
@@ -75,4 +145,6 @@ iOS (SwiftUI)
 
 # 👩‍💻 Developer
 
-Mobile Capstone Project
+Hiba Abo Shawish
+
+Mobile Application Development Capstone Project
