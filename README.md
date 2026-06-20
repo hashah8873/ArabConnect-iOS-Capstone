@@ -48,6 +48,8 @@ ArabConnect is a mobile application designed to support Arabic-speaking newcomer
 * Housing Screen
 * Healthcare Screen
 * Education Screen
+* Government Programs Screen
+* Newcomer Rights Screen
 
 ---
 
@@ -66,9 +68,13 @@ ArabConnect is a mobile application designed to support Arabic-speaking newcomer
 * Created Housing resource screen
 * Created Healthcare resource screen
 * Created Education resource screen
+* Created Government Programs screen
+* Created Newcomer Rights screen
 * Implemented navigation between all screens
 * Connected Xcode project to GitHub
 * Created GitHub Project Board and task tracking
+* Updated project structure and organized Views
+* Improved Home Screen with additional categories
 
 ---
 
@@ -77,11 +83,12 @@ ArabConnect is a mobile application designed to support Arabic-speaking newcomer
 * Firebase Authentication
 * User Registration and Login Validation
 * Firestore Database Integration
-* Government Programs Section
-* Newcomer Rights Information
 * Search Functionality
 * Dynamic User Profiles
 * Community Posts and Listings
+* Add Post Screen
+* Arabic and English Localization
+* Testing and Bug Fixes
 
 ---
 
