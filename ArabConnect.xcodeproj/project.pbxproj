@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		67068C9F2FF212C3006F54C8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 67068C9E2FF212C3006F54C8 /* FirebaseAuth */; };
+		67068CA12FF212C3006F54C8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 67068CA02FF212C3006F54C8 /* FirebaseCore */; };
+		67068CA32FF212C3006F54C8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 67068CA22FF212C3006F54C8 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		67CA5E732FD64BC200652295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,6 +35,23 @@
 		67CA5E7C2FD64BC200652295 /* ArabConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArabConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		67068C9B2FF1C826006F54C8 /* Exceptions for "ArabConnectUITests" folder in "ArabConnect" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 67CA5E642FD64BC000652295 /* ArabConnect */;
+		};
+		67068C9C2FF1C826006F54C8 /* Exceptions for "ArabConnectUITests" folder in "ArabConnectUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 67CA5E7B2FD64BC200652295 /* ArabConnectUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		67CA5E672FD64BC000652295 /* ArabConnect */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -42,6 +65,10 @@
 		};
 		67CA5E7F2FD64BC200652295 /* ArabConnectUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				67068C9B2FF1C826006F54C8 /* Exceptions for "ArabConnectUITests" folder in "ArabConnect" target */,
+				67068C9C2FF1C826006F54C8 /* Exceptions for "ArabConnectUITests" folder in "ArabConnectUITests" target */,
+			);
 			path = ArabConnectUITests;
 			sourceTree = "<group>";
 		};
@@ -52,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67068CA12FF212C3006F54C8 /* FirebaseCore in Frameworks */,
+				67068C9F2FF212C3006F54C8 /* FirebaseAuth in Frameworks */,
+				67068CA32FF212C3006F54C8 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +142,9 @@
 			);
 			name = ArabConnect;
 			packageProductDependencies = (
+				67068C9E2FF212C3006F54C8 /* FirebaseAuth */,
+				67068CA02FF212C3006F54C8 /* FirebaseCore */,
+				67068CA22FF212C3006F54C8 /* FirebaseFirestore */,
 			);
 			productName = ArabConnect;
 			productReference = 67CA5E652FD64BC000652295 /* ArabConnect.app */;
@@ -195,6 +228,9 @@
 			);
 			mainGroup = 67CA5E5C2FD64BC000652295;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				67068C9D2FF212C3006F54C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 67CA5E662FD64BC000652295 /* Products */;
 			projectDirPath = "";
@@ -550,6 +586,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67068C9D2FF212C3006F54C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67068C9E2FF212C3006F54C8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67068C9D2FF212C3006F54C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		67068CA02FF212C3006F54C8 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67068C9D2FF212C3006F54C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		67068CA22FF212C3006F54C8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67068C9D2FF212C3006F54C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67CA5E5D2FD64BC000652295 /* Project object */;
 }
