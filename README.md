@@ -2,156 +2,239 @@
 
 ## 📱 Mobile Capstone Project
 
-ArabConnect is a mobile application designed to support Arabic-speaking newcomers and immigrants in Canada by providing easy access to community resources, government programs, local opportunities, and settlement information.
+ArabConnect is an iOS mobile application designed to support Arabic-speaking newcomers and immigrants in Canada by providing easy access to community resources, government programs, employment opportunities, housing information, healthcare services, and settlement support.
 
 ---
 
 # 🎯 Project Goals
 
-* Help newcomers understand available services and rights
-* Provide organized access to government programs
-* Create a community platform for jobs, housing, and services
-* Support Arabic-speaking communities in Canada
+- Help newcomers understand their rights and available services.
+- Provide organized access to government programs.
+- Connect users with community resources.
+- Support Arabic-speaking communities across Canada.
+- Build a simple, user-friendly mobile experience using SwiftUI and Firebase.
 
 ---
 
 # ✨ Main Features
 
-* User Authentication
-* Government Programs Section
-* Community Services
-* Jobs and Housing Listings
-* Add and Browse Posts
-* Search Functionality
-* User Profiles
-* Arabic and English Support
+- Secure User Authentication
+- User Registration & Login
+- User Profile
+- Government Programs
+- Jobs Listings
+- Housing Resources
+- Healthcare Information
+- Education Resources
+- Newcomer Rights
+- Community Resource Navigation
+- Arabic & English Support (Planned)
 
 ---
 
 # 📱 Application Screens
 
-### Authentication
+## Authentication
 
-* Splash Screen
-* Welcome Screen
-* Login Screen
-* Register Screen
+- Splash Screen
+- Welcome Screen
+- Login Screen
+- Register Screen
 
-### Main Screens
+## Main
 
-* Home Screen
-* Profile Screen
+- Home Screen
+- Profile Screen
 
-### Community Resources
+## Community Resources
 
-* Jobs Screen
-* Housing Screen
-* Healthcare Screen
-* Education Screen
-* Government Programs Screen
-* Newcomer Rights Screen
+- Jobs
+- Housing
+- Healthcare
+- Education
+- Government Programs
+- Newcomer Rights
 
 ---
 
 # ✅ Current Progress
 
-### Completed Features
+### User Interface
 
-* Created SwiftUI project structure
-* Designed and implemented Splash Screen
-* Built Welcome Screen
-* Built Login Screen
-* Built Register Screen
-* Built Home Screen
-* Built Profile Screen
-* Created Jobs resource screen
-* Created Housing resource screen
-* Created Healthcare resource screen
-* Created Education resource screen
-* Created Government Programs screen
-* Created Newcomer Rights screen
-* Implemented navigation between all screens
-* Connected Xcode project to GitHub
-* Created GitHub Project Board and task tracking
-* Updated project structure and organized Views
-* Improved Home Screen with additional categories
+- ✅ Created complete SwiftUI project structure.
+- ✅ Designed and implemented Splash Screen.
+- ✅ Built Welcome Screen.
+- ✅ Built Login Screen.
+- ✅ Built Register Screen.
+- ✅ Built Home Screen.
+- ✅ Built Profile Screen.
+- ✅ Created Jobs screen.
+- ✅ Created Housing screen.
+- ✅ Created Healthcare screen.
+- ✅ Created Education screen.
+- ✅ Created Government Programs screen.
+- ✅ Created Newcomer Rights screen.
+- ✅ Implemented navigation between all screens.
+
+### Firebase Integration
+
+- ✅ Connected the application to Firebase.
+- ✅ Configured GoogleService-Info.plist.
+- ✅ Installed Firebase SDK packages.
+- ✅ Implemented Firebase Authentication.
+- ✅ User registration using Firebase Authentication.
+- ✅ Connected Cloud Firestore.
+- ✅ Created Firestore database.
+- ✅ Created users collection.
+- ✅ Automatically store user information after registration.
+- ✅ Save:
+  - User ID
+  - Full Name
+  - Email Address
+  - Account Creation Date
+
+### Data Models
+
+- ✅ Created User model.
+- ✅ Prepared Profile screen for Firestore integration.
+
+### Project Management
+
+- ✅ Connected project to GitHub.
+- ✅ Version control using Git.
+- ✅ Updated project structure.
+- ✅ Organized project folders.
+- ✅ Successfully pushed latest Firebase integration to GitHub.
 
 ---
 
 # 🔜 Upcoming Features
 
-* Firebase Authentication
-* User Registration and Login Validation
-* Firestore Database Integration
-* Search Functionality
-* Dynamic User Profiles
-* Community Posts and Listings
-* Add Post Screen
-* Arabic and English Localization
-* Testing and Bug Fixes
+- User Login Validation
+- Fetch user profile from Firestore
+- Edit Profile
+- Community Posts
+- Add Post Screen
+- Search Functionality
+- Firebase Storage
+- Image Upload
+- Arabic & English Localization
+- Testing
+- Performance Optimization
+- Bug Fixes
 
 ---
 
 # 🛠 Technologies and Tools
 
-### Currently Used
+## Current Technologies
 
-* Swift
-* SwiftUI
-* Xcode
-* GitHub
-* Adobe XD
+- Swift
+- SwiftUI
+- Firebase Authentication
+- Cloud Firestore
+- Xcode
+- Git
+- GitHub
+- Adobe XD
 
-### Planned Integration
+## Planned Technologies
 
-* Firebase Authentication
-* Firebase Firestore
-* Firebase Storage
+- Firebase Storage
+- MVVM Architecture
+- Async/Await
+- Localization
+- Cloud Images
 
 ---
 
-# 🚀 Development Plan
+# 🚀 Development Roadmap
 
-## Stage 1
+## ✅ Phase 1
 
-* Proposal and XD Design
+- Project Proposal
+- Research
+- Adobe XD Design
 
-## Stage 2
+## ✅ Phase 2
 
-* GitHub Setup
-* Project Planning
-* SwiftUI Project Creation
+- GitHub Repository
+- SwiftUI Project Setup
+- Navigation Structure
 
-## Stage 3
+## ✅ Phase 3
 
-* UI Development
-* Authentication Screens
-* Navigation Structure
+- Authentication Screens
+- Home Interface
+- Community Resource Screens
 
-## Stage 4
+## ✅ Phase 4
 
-* Community Features
-* Government Programs
-* Resource Categories
-* Database Integration
+- Firebase Authentication
+- Firestore Database
+- User Registration
+- Store User Data
 
-## Stage 5
+## 🔄 Phase 5 (Current)
 
-* Firebase Authentication
-* Testing and Bug Fixing
-* Final Improvements
-* Project Presentation
+- Load User Profile from Firestore
+- Login Session Management
+- Edit Profile
+- Search
+- Community Posts
+
+## ⏳ Phase 6
+
+- Firebase Storage
+- Arabic Localization
+- Testing
+- Final Improvements
+- Project Presentation
+
+---
+
+# 📂 Project Structure
+
+```
+ArabConnect
+│
+├── Views
+├── Models
+├── Services
+├── ViewModels
+├── Resources
+├── Assets
+└── Firebase Configuration
+```
 
 ---
 
 # 📱 Platform
 
-iOS (SwiftUI)
+- iOS
+- SwiftUI
 
 ---
 
 # 👩‍💻 Developer
 
-Hiba Abo Shawish
+**Hiba Abo Shawish**
 
-Mobile Application Development Capstone Project
+Mobile & Web Developer Using AI
+
+TriOS College
+
+---
+
+# 📅 Latest Update
+
+**July 2026**
+
+Completed Firebase Authentication and Cloud Firestore integration.
+
+Users can now:
+
+- Create a new account.
+- Authenticate securely with Firebase.
+- Store profile information in Firestore.
+- Navigate to the Home screen after successful registration.
