@@ -64,22 +64,20 @@ struct LoginView: View {
 
                 }
 
-                NavigationLink(
-                    destination: HomeView(),
-                    isActive: $navigateToHome
-                ) {
-                    EmptyView()
-                }
+                
 
                 Spacer()
 
-            }
-            .padding()
-            .navigationTitle("Login")
+                }
+                .padding()
+                .navigationTitle("Login")
+                .navigationDestination(isPresented: $navigateToHome) {
+                    HomeView()
+                }
 
-        }
+                }
 
-    }
+                }
 }
 
 #Preview {
