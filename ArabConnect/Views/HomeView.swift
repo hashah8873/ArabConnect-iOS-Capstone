@@ -1,37 +1,43 @@
 import SwiftUI
-import FirebaseAuth
 
 struct HomeView: View {
 
     var body: some View {
 
-        VStack(spacing: 25) {
+        NavigationStack {
 
-            Text("🏠")
-                .font(.system(size: 80))
+            List {
 
-            Text("Welcome to ArabConnect")
-                .font(.largeTitle)
-                .bold()
+                NavigationLink("Jobs", destination: JobsView())
 
-            if let user = Auth.auth().currentUser {
+                NavigationLink("Housing", destination: HousingView())
 
-                Text(user.email ?? "")
-                    .foregroundColor(.gray)
+                NavigationLink("Healthcare", destination: HealthcareView())
+
+                NavigationLink("Education", destination: EducationView())
+
+                NavigationLink("Government Programs", destination: GovernmentProgramsView())
+
+                NavigationLink("Newcomer Rights", destination: RightsView())
+
+                NavigationLink("Community Posts", destination: ViewPostsView())
+
+                NavigationLink("Add Post", destination: AddPostView())
+
+                NavigationLink("Profile", destination: ProfileView())
 
             }
 
-            Spacer()
+            .navigationTitle("ArabConnect")
 
         }
-        .padding()
-        .navigationBarBackButtonHidden(true)
 
     }
+
 }
 
 #Preview {
-    NavigationStack {
-        HomeView()
-    }
+
+    HomeView()
+
 }

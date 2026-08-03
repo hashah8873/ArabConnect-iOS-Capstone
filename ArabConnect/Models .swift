@@ -1,7 +1,20 @@
-//
-//  Models .swift
-//  ArabConnect
-//
-//  Created by Hiba Abo Shawish on 2026-06-07.
-//
+import Foundation
 
+struct User: Identifiable {
+
+    let id: String
+    let fullName: String
+    let email: String
+
+}
+
+struct Post: Identifiable {
+
+    let id: String
+    let title: String
+    let description: String
+    let category: String
+    let createdBy: String
+    let createdAt: Date
+
+}

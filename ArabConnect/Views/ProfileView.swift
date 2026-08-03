@@ -1,13 +1,9 @@
 import SwiftUI
 import FirebaseAuth
-import FirebaseFirestore
 
 struct ProfileView: View {
 
-    @State private var fullName = ""
-    @State private var email = ""
-
-    let db = Firestore.firestore()
+    @StateObject private var viewModel = UserViewModel()
 
     var body: some View {
 
@@ -22,13 +18,22 @@ struct ProfileView: View {
                 .font(.largeTitle)
                 .bold()
 
-            Text("Name: \(fullName)")
+            Text("Name: \(viewModel.user?.fullName ?? "")")
                 .font(.title3)
 
-            Text("Email: \(email)")
+            Text("Email: \(viewModel.user?.email ?? "")")
                 .foregroundColor(.gray)
 
-            Spacer()
+            NavigationLink(destination: EditProfileView()) {
+
+                Text("Edit Profile")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+
+            }
 
             Button("Logout") {
 
@@ -43,45 +48,22 @@ struct ProfileView: View {
                 }
 
             }
-            .padding()
             .frame(maxWidth: .infinity)
+            .padding()
             .background(Color.red)
             .foregroundColor(.white)
             .cornerRadius(12)
+
+            Spacer()
 
         }
         .padding()
         .navigationTitle("Profile")
         .onAppear {
 
-            loadUser()
+            viewModel.fetchUser()
 
         }
-
-    }
-
-    func loadUser() {
-
-        guard let uid = Auth.auth().currentUser?.uid else {
-
-            return
-
-        }
-
-        db.collection("users")
-            .document(uid)
-            .getDocument { snapshot, error in
-
-                guard let data = snapshot?.data() else {
-
-                    return
-
-                }
-
-                fullName = data["fullName"] as? String ?? ""
-                email = data["email"] as? String ?? ""
-
-            }
 
     }
 
