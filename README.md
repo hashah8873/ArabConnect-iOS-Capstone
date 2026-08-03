@@ -19,7 +19,8 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 # ✨ Main Features
 
 - Secure User Authentication
-- User Registration & Login
+- User Registration
+- User Login
 - User Profile
 - Government Programs
 - Jobs Listings
@@ -27,7 +28,9 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - Healthcare Information
 - Education Resources
 - Newcomer Rights
-- Community Resource Navigation
+- Community Posts
+- Add Community Posts
+- View Community Posts
 - Arabic & English Support (Planned)
 
 ---
@@ -45,6 +48,8 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 
 - Home Screen
 - Profile Screen
+- Add Post Screen
+- View Posts Screen
 
 ## Community Resources
 
@@ -59,7 +64,7 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 
 # ✅ Current Progress
 
-### User Interface
+## User Interface
 
 - ✅ Created complete SwiftUI project structure.
 - ✅ Designed and implemented Splash Screen.
@@ -68,6 +73,8 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - ✅ Built Register Screen.
 - ✅ Built Home Screen.
 - ✅ Built Profile Screen.
+- ✅ Created Add Post screen.
+- ✅ Created View Posts screen.
 - ✅ Created Jobs screen.
 - ✅ Created Housing screen.
 - ✅ Created Healthcare screen.
@@ -76,52 +83,89 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - ✅ Created Newcomer Rights screen.
 - ✅ Implemented navigation between all screens.
 
-### Firebase Integration
+---
+
+## Firebase Integration
 
 - ✅ Connected the application to Firebase.
 - ✅ Configured GoogleService-Info.plist.
 - ✅ Installed Firebase SDK packages.
 - ✅ Implemented Firebase Authentication.
-- ✅ User registration using Firebase Authentication.
+- ✅ User Registration using Firebase Authentication.
+- ✅ User Login.
 - ✅ Connected Cloud Firestore.
 - ✅ Created Firestore database.
 - ✅ Created users collection.
 - ✅ Automatically store user information after registration.
-- ✅ Save:
-  - User ID
-  - Full Name
-  - Email Address
-  - Account Creation Date
+- ✅ Retrieve user profile information from Firestore.
+- ✅ Configured Firestore security rules for authenticated users.
 
-### Data Models
+### User Data Stored
 
-- ✅ Created User model.
-- ✅ Prepared Profile screen for Firestore integration.
+- User ID
+- Full Name
+- Email Address
+- Account Creation Date
 
-### Project Management
+---
+
+## Community Posts
+
+### Implemented
+
+- ✅ Created Post model.
+- ✅ Created PostService.
+- ✅ Created PostViewModel.
+- ✅ Built Add Post screen.
+- ✅ Built View Posts screen.
+- ✅ Created Firestore structure for community posts.
+
+### In Progress
+
+- 🔄 Saving posts to Firestore.
+- 🔄 Displaying posts from Firestore.
+- 🔄 Community post testing.
+
+---
+
+## MVVM Architecture
+
+Implemented:
+
+- ✅ User Model
+- ✅ Post Model
+- ✅ UserService
+- ✅ PostService
+- ✅ UserViewModel
+- ✅ PostViewModel
+
+---
+
+## Project Management
 
 - ✅ Connected project to GitHub.
-- ✅ Version control using Git.
-- ✅ Updated project structure.
-- ✅ Organized project folders.
-- ✅ Successfully pushed latest Firebase integration to GitHub.
+- ✅ Git version control.
+- ✅ Weekly commits.
+- ✅ Updated README.
+- ✅ Successfully pushed latest project updates to GitHub.
 
 ---
 
 # 🔜 Upcoming Features
 
-- User Login Validation
-- Fetch user profile from Firestore
-- Edit Profile
-- Community Posts
-- Add Post Screen
+- Edit User Profile
+- Logout Session Management
+- Update Posts
+- Delete Posts
 - Search Functionality
 - Firebase Storage
-- Image Upload
-- Arabic & English Localization
-- Testing
+- Upload Images
+- Arabic Localization
+- English Localization
 - Performance Optimization
+- Testing
 - Bug Fixes
+- Final Deployment
 
 ---
 
@@ -144,7 +188,7 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - MVVM Architecture
 - Async/Await
 - Localization
-- Cloud Images
+- Image Upload
 
 ---
 
@@ -171,22 +215,27 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 ## ✅ Phase 4
 
 - Firebase Authentication
-- Firestore Database
+- Firestore Integration
 - User Registration
-- Store User Data
+- User Login
+- Store User Information
+- Retrieve User Profile
 
 ## 🔄 Phase 5 (Current)
 
-- Load User Profile from Firestore
-- Login Session Management
-- Edit Profile
-- Search
 - Community Posts
+- Firestore CRUD
+- User Profile Integration
+- MVVM Implementation
+- Add & View Posts
 
 ## ⏳ Phase 6
 
+- Edit Profile
+- Search
 - Firebase Storage
-- Arabic Localization
+- Image Upload
+- Localization
 - Testing
 - Final Improvements
 - Project Presentation
@@ -204,7 +253,8 @@ ArabConnect
 ├── ViewModels
 ├── Resources
 ├── Assets
-└── Firebase Configuration
+├── Firebase Configuration
+└── GitHub Repository
 ```
 
 ---
@@ -228,13 +278,26 @@ TriOS College
 
 # 📅 Latest Update
 
-**July 2026**
+**August 2026**
 
-Completed Firebase Authentication and Cloud Firestore integration.
+### Completed
 
-Users can now:
+- Firebase Authentication integration.
+- Cloud Firestore integration.
+- User registration and login.
+- User profile data retrieval.
+- User and Post models.
+- UserService and PostService.
+- UserViewModel and PostViewModel.
+- Add Post screen.
+- View Posts screen.
+- Home navigation updated.
+- MVVM architecture implementation.
+- Project successfully committed and pushed to GitHub.
 
-- Create a new account.
-- Authenticate securely with Firebase.
-- Store profile information in Firestore.
-- Navigate to the Home screen after successful registration.
+### Currently Working On
+
+- Firestore post publishing.
+- Displaying community posts from Firestore.
+- Edit Profile.
+- Community post management.
