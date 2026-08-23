@@ -81,7 +81,7 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - ✅ Created Education screen.
 - ✅ Created Government Programs screen.
 - ✅ Created Newcomer Rights screen.
-- ✅ Implemented navigation between all screens.
+- ✅ Implemented navigation between application screens.
 
 ---
 
@@ -91,8 +91,8 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 - ✅ Configured GoogleService-Info.plist.
 - ✅ Installed Firebase SDK packages.
 - ✅ Implemented Firebase Authentication.
-- ✅ User Registration using Firebase Authentication.
-- ✅ User Login.
+- ✅ Implemented user registration.
+- ✅ Implemented user login.
 - ✅ Connected Cloud Firestore.
 - ✅ Created Firestore database.
 - ✅ Created users collection.
@@ -111,20 +111,29 @@ ArabConnect is an iOS mobile application designed to support Arabic-speaking new
 
 ## Community Posts
 
-### Implemented
+### Completed
 
 - ✅ Created Post model.
 - ✅ Created PostService.
 - ✅ Created PostViewModel.
 - ✅ Built Add Post screen.
-- ✅ Built View Posts screen.
-- ✅ Created Firestore structure for community posts.
+- ✅ Connected Add Post to Firestore.
+- ✅ Created posts collection in Firestore.
+- ✅ Successfully saved community posts to Firestore.
+- ✅ Added Community Posts navigation to HomeView.
 
-### In Progress
+### Currently Testing
 
-- 🔄 Saving posts to Firestore.
-- 🔄 Displaying posts from Firestore.
-- 🔄 Community post testing.
+- 🔄 Loading community posts from Firestore.
+- 🔄 Displaying Firestore posts inside the application.
+- 🔄 Testing community post functionality.
+
+### Planned
+
+- ⏳ Edit Posts
+- ⏳ Delete Posts
+- ⏳ Search Posts
+- ⏳ Filter Posts by Category
 
 ---
 
@@ -139,6 +148,8 @@ Implemented:
 - ✅ UserViewModel
 - ✅ PostViewModel
 
+The project is being organized using the Model-View-ViewModel (MVVM) architecture to separate application data, business logic, and user interface components.
+
 ---
 
 ## Project Management
@@ -146,24 +157,27 @@ Implemented:
 - ✅ Connected project to GitHub.
 - ✅ Git version control.
 - ✅ Weekly commits.
-- ✅ Updated README.
-- ✅ Successfully pushed latest project updates to GitHub.
+- ✅ Updated project structure.
+- ✅ Maintained project README.
+- 🔄 Continuing regular GitHub updates.
 
 ---
 
 # 🔜 Upcoming Features
 
 - Edit User Profile
-- Logout Session Management
+- Logout and Session Management
+- Display Community Posts from Firestore
 - Update Posts
 - Delete Posts
 - Search Functionality
+- Filter Posts by Category
 - Firebase Storage
-- Upload Images
+- Image Upload
 - Arabic Localization
 - English Localization
-- Performance Optimization
 - Testing
+- Performance Optimization
 - Bug Fixes
 - Final Deployment
 
@@ -185,7 +199,6 @@ Implemented:
 ## Planned Technologies
 
 - Firebase Storage
-- MVVM Architecture
 - Async/Await
 - Localization
 - Image Upload
@@ -224,15 +237,21 @@ Implemented:
 ## 🔄 Phase 5 (Current)
 
 - Community Posts
-- Firestore CRUD
+- Firestore Post Creation
+- Firestore Post Reading
 - User Profile Integration
-- MVVM Implementation
-- Add & View Posts
+- MVVM Architecture
+- Add Post
+- View Posts
+- Community Post Testing
 
 ## ⏳ Phase 6
 
 - Edit Profile
+- Update Posts
+- Delete Posts
 - Search
+- Filter by Category
 - Firebase Storage
 - Image Upload
 - Localization
@@ -244,7 +263,7 @@ Implemented:
 
 # 📂 Project Structure
 
-```
+```text
 ArabConnect
 │
 ├── Views
@@ -255,49 +274,3 @@ ArabConnect
 ├── Assets
 ├── Firebase Configuration
 └── GitHub Repository
-```
-
----
-
-# 📱 Platform
-
-- iOS
-- SwiftUI
-
----
-
-# 👩‍💻 Developer
-
-**Hiba Abo Shawish**
-
-Mobile & Web Developer Using AI
-
-TriOS College
-
----
-
-# 📅 Latest Update
-
-**August 2026**
-
-### Completed
-
-- Firebase Authentication integration.
-- Cloud Firestore integration.
-- User registration and login.
-- User profile data retrieval.
-- User and Post models.
-- UserService and PostService.
-- UserViewModel and PostViewModel.
-- Add Post screen.
-- View Posts screen.
-- Home navigation updated.
-- MVVM architecture implementation.
-- Project successfully committed and pushed to GitHub.
-
-### Currently Working On
-
-- Firestore post publishing.
-- Displaying community posts from Firestore.
-- Edit Profile.
-- Community post management.
