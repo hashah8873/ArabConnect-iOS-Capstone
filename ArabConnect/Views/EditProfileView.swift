@@ -3,159 +3,260 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct EditProfileView: View {
-    
+
     @Environment(\.dismiss) private var dismiss
-    
+
     @State private var fullName = ""
     @State private var email = ""
+
+    @State private var isLoading = true
     @State private var isSaving = false
-    @State private var message = ""
-    @State private var showSuccess = false
-    
+
+    @State private var errorMessage = ""
+    @State private var successMessage = ""
+
     private let db = Firestore.firestore()
-    
+
     var body: some View {
-        
-        Form {
-            
-            Section("Personal Information") {
-                
-                TextField("Full Name", text: $fullName)
-                
-                TextField("Email", text: $email)
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
-            }
-            
-            
-            Section {
-                
-                Button {
-                    saveChanges()
-                } label: {
-                    
-                    HStack {
-                        
-                        Spacer()
-                        
-                        if isSaving {
-                            ProgressView()
-                        } else {
-                            Text("Save Changes")
-                                .fontWeight(.semibold)
+
+        NavigationStack {
+
+            Form {
+
+                // MARK: - Profile Information
+
+                Section("Profile Information") {
+
+                    TextField("Full Name", text: $fullName)
+                        .textContentType(.name)
+                        .autocorrectionDisabled()
+
+                    TextField("Email", text: $email)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                }
+
+                // MARK: - Save Button
+
+                Section {
+
+                    Button {
+                        saveChanges()
+                    } label: {
+
+                        HStack {
+
+                            Spacer()
+
+                            if isSaving {
+                                ProgressView()
+                            } else {
+                                Text("Save Changes")
+                                    .fontWeight(.semibold)
+                            }
+
+                            Spacer()
                         }
-                        
-                        Spacer()
+                    }
+                    .disabled(
+                        isLoading ||
+                        isSaving ||
+                        fullName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+                        email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    )
+                }
+
+                // MARK: - Messages
+
+                if !errorMessage.isEmpty {
+
+                    Section {
+
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .font(.subheadline)
                     }
                 }
-                .disabled(
-                    isSaving ||
-                    fullName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                )
-            }
-            
-            
-            if !message.isEmpty {
-                
-                Section {
-                    Text(message)
-                        .foregroundColor(showSuccess ? .green : .red)
+
+                if !successMessage.isEmpty {
+
+                    Section {
+
+                        Text(successMessage)
+                            .foregroundColor(.green)
+                            .font(.subheadline)
+                    }
                 }
             }
-        }
-        .navigationTitle("Edit Profile")
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            loadCurrentUser()
+            .navigationTitle("Edit Profile")
+            .navigationBarTitleDisplayMode(.inline)
+
+            .toolbar {
+
+                ToolbarItem(placement: .topBarLeading) {
+
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
+
+            .onAppear {
+                loadUserProfile()
+            }
         }
     }
-    
-    
-    // MARK: - Load User
-    
-    private func loadCurrentUser() {
-        
-        guard let userID = Auth.auth().currentUser?.uid else {
-            message = "No user is currently logged in."
+
+    // MARK: - Load User Profile
+
+    private func loadUserProfile() {
+
+        isLoading = true
+        errorMessage = ""
+
+        guard let user = Auth.auth().currentUser else {
+
+            isLoading = false
+            errorMessage = "No user is currently logged in."
             return
         }
-        
+
+        let userID = user.uid
+
         db.collection("users")
             .document(userID)
-            .getDocument { snapshot, error in
-                
+            .getDocument { document, error in
+
                 DispatchQueue.main.async {
-                    
+
+                    isLoading = false
+
                     if let error = error {
-                        message = error.localizedDescription
+
+                        errorMessage =
+                            "Failed to load profile: \(error.localizedDescription)"
+
                         return
                     }
-                    
-                    guard let data = snapshot?.data() else {
-                        message = "User information was not found."
+
+                    guard let data = document?.data() else {
+
+                        fullName = ""
+                        email = user.email ?? ""
+
                         return
                     }
-                    
+
                     fullName = data["fullName"] as? String ?? ""
-                    email = data["email"] as? String ?? ""
+                    email = data["email"] as? String ?? user.email ?? ""
                 }
             }
     }
-    
-    
+
     // MARK: - Save Changes
-    
+
     private func saveChanges() {
-        
-        guard let userID = Auth.auth().currentUser?.uid else {
-            message = "No user is currently logged in."
+
+        errorMessage = ""
+        successMessage = ""
+
+        let trimmedName =
+            fullName.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let trimmedEmail =
+            email.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !trimmedName.isEmpty else {
+
+            errorMessage = "Please enter your full name."
             return
         }
-        
-        let cleanName = fullName.trimmingCharacters(
-            in: .whitespacesAndNewlines
-        )
-        
-        guard !cleanName.isEmpty else {
-            message = "Please enter your full name."
+
+        guard !trimmedEmail.isEmpty else {
+
+            errorMessage = "Please enter your email address."
             return
         }
-        
+
+        guard let user = Auth.auth().currentUser else {
+
+            errorMessage = "No user is currently logged in."
+            return
+        }
+
         isSaving = true
-        message = ""
-        
+
+        let userID = user.uid
+
         let updatedData: [String: Any] = [
-            "fullName": cleanName
+
+            "fullName": trimmedName,
+            "email": trimmedEmail
         ]
-        
+
         db.collection("users")
             .document(userID)
             .updateData(updatedData) { error in
-                
+
                 DispatchQueue.main.async {
-                    
-                    isSaving = false
-                    
+
                     if let error = error {
-                        message = error.localizedDescription
-                        showSuccess = false
+
+                        isSaving = false
+
+                        errorMessage =
+                            "Failed to save changes: \(error.localizedDescription)"
+
                         return
                     }
-                    
-                    showSuccess = true
-                    message = "Profile updated successfully!"
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        dismiss()
+
+                    // Update Firebase Authentication email
+                    if trimmedEmail != user.email {
+
+                        user.updateEmail(to: trimmedEmail) { error in
+
+                            DispatchQueue.main.async {
+
+                                isSaving = false
+
+                                if let error = error {
+
+                                    errorMessage =
+                                        "Profile saved, but the authentication email could not be updated: \(error.localizedDescription)"
+
+                                    return
+                                }
+
+                                successMessage =
+                                    "Profile updated successfully."
+
+                                DispatchQueue.main.asyncAfter(
+                                    deadline: .now() + 1.0
+                                ) {
+                                    dismiss()
+                                }
+                            }
+                        }
+
+                    } else {
+
+                        isSaving = false
+
+                        successMessage =
+                            "Profile updated successfully."
+
+                        DispatchQueue.main.asyncAfter(
+                            deadline: .now() + 1.0
+                        ) {
+                            dismiss()
+                        }
                     }
                 }
             }
     }
 }
 
-
 #Preview {
-    NavigationStack {
-        EditProfileView()
-    }
+    EditProfileView()
 }
